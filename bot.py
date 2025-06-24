@@ -71,4 +71,14 @@ def check_trade_outcome(trade_id):
         conn.commit()
 
         outcome_symbol = "✅" if result == "WIN" else "❌"
-        outcome_message = f"""
+        # هذا هو الجزء الكامل والصحيح الذي يجب أن يكون في ملفك
+outcome_symbol = "✅" if result == "WIN" else "❌"
+outcome_message = f"""
+*{outcome_symbol} نـتـيـجـة الـصـفـقـة {outcome_symbol}*
+
+▫️ *الزوج:* {symbol}
+▫️ *الاتجاه:* {direction}
+▫️ *النتيجة:* *{result}*
+▫️ *سعر الدخول:* `{entry_price:.5f}`
+▫️ *السعر الحالي:* `{current_price:.5f}`
+""" # <--- هذا هو الإغلاق المفقود لديك
